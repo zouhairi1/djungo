@@ -1,0 +1,10 @@
+<h1>Liste des personnes</h1>
+<a href="{% url 'create' %}">Ajouter</a>
+<ul>
+  {% for person in people %}
+    <li>{{ person.nom }} {{ person.prenom }}
+      <a href="{% url 'update' person.id %}">Modifier</a>
+      <a href="{% url 'delete' person.id %}">Supprimer</a>
+    </li>
+  {% endfor %}
+</ul>
